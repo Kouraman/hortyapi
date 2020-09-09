@@ -1,20 +1,5 @@
--- DROP TABLE generic_prices;
--- DROP TABLE generic_advices;
--- DROP TABLE generic_treatments;
--- DROP TABLE generic_images;
--- DROP TABLE specific_prices;
--- DROP TABLE specific_advices;
--- DROP TABLE specific_treatments;
--- DROP TABLE plants;
--- DROP TABLE regroupments;
--- DROP TABLE families;
--- DROP TABLE categories;
 
--- choux fleur : https://www.carrefour.fr/media/1500x1500/Photosite/PRODUITS_FRAIS_TRANSFORMATION/FRUITS_ET_LEGUMES/3000001038436_PHOTOSITE_20150617_162744_0.jpg?placeholder=1
--- choux frise : https://cdn.panierlocal.org/media/PXJTJUXEC/chou-vert_zoom.jpg
--- bata bl : https://jardinage.lemonde.fr/images/dossiers/2017-07/batavia-153406.jpg
--- bata br : https://locavor.fr/data/produits/4/81168/81168-batavia-brune-1.jpg
-
+-- Add variable for script visibility
 SET @batabl = 'https://jardinage.lemonde.fr/images/dossiers/2017-07/batavia-153406.jpg';
 SET @batabr = 'https://locavor.fr/data/produits/4/81168/81168-batavia-brune-1.jpg';
 SET @choufri = 'https://cdn.panierlocal.org/media/PXJTJUXEC/chou-vert_zoom.jpg';

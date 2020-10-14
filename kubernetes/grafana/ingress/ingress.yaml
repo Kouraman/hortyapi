@@ -1,0 +1,15 @@
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: grafana-ingress
+  namespace: monitoring
+  annotations:
+    kubernetes.io/ingress.global-static-ip-name: "graphana"
+spec:
+  rules:
+    - host: grafana.bbhorty.tk
+      http:
+        paths:
+          - backend:
+              serviceName: grafana-service
+              servicePort: 3000

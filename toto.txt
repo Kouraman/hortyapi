@@ -1,2 +1,0 @@
-
-Configure AWS CDN (CloudFront) for image delivery.

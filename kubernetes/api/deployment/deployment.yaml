@@ -1,0 +1,65 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  annotations:
+    deployment.kubernetes.io/revision: "1"
+  generation: 1
+  labels:
+    app: horty-api
+  name: horty-api
+  namespace: bbhorty
+spec:
+  progressDeadlineSeconds: 600
+  replicas: 1
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      app: horty-api
+  strategy:
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 25%
+    type: RollingUpdate
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: horty-api
+    spec:
+      containers:
+        - image: gcr.io/bb-horty-dev/api:latest
+          imagePullPolicy: Always
+          name: api
+          #Add Expose Port
+          ports:
+            - containerPort: 8080
+          #Add Environment Variable
+          env:
+            - name: MYSQL_HOST
+              valueFrom:
+                secretKeyRef:
+                  name: mysql-db
+                  key: url
+            - name: MYSQL_PORT
+              valueFrom:
+                secretKeyRef:
+                  name: mysql-db
+                  key: port
+            - name: MYSQL_USER
+              valueFrom:
+                secretKeyRef:
+                  name: mysql-db
+                  key: username
+            - name: MYSQL_PWD
+              valueFrom:
+                secretKeyRef:
+                  name: mysql-db
+                  key: password
+          resources: {}
+          terminationMessagePath: /dev/termination-log
+          terminationMessagePolicy: File
+      dnsPolicy: ClusterFirst
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      terminationGracePeriodSeconds: 30

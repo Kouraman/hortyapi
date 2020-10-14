@@ -1,0 +1,6 @@
+Refactor DB :
+    Add src_image to Categories
+    Add Table image for Plants
+
+
+Configure AWS CDN (CloudFront) for image delivery.

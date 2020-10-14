@@ -6,16 +6,16 @@ SET @choufri = 'https://cdn.panierlocal.org/media/PXJTJUXEC/chou-vert_zoom.jpg';
 SET @choufleu = 'https://www.carrefour.fr/media/1500x1500/Photosite/PRODUITS_FRAIS_TRANSFORMATION/FRUITS_ET_LEGUMES/3000001038436_PHOTOSITE_20150617_162744_0.jpg?placeholder=1';
 SET @mache = 'https://www.monpetitcoinvert.com/blog/wp-content/uploads/2016/10/mache.jpg';
 
-INSERT INTO categories (name)
+INSERT INTO categories (name,src_img)
  VALUES
- ('LEGUMES'),
- ('FLEUR')
+ ('legumes',@batabl),
+ ('fleurs',@choufri)
 ;
 
 INSERT INTO families (category_id,name,src_img)
  VALUES
- ((SELECT id from categories WHERE name LIKE 'LEGUMES'),'Choux',@choufri),
- ((SELECT id from categories WHERE name LIKE 'LEGUMES'),'Salades',@batabl)
+ ((SELECT id from categories WHERE name LIKE 'legumes'),'Choux',@choufri),
+ ((SELECT id from categories WHERE name LIKE 'legumes'),'Salades',@batabl)
 ;
 
 INSERT INTO regroupments (family_id,name,start_plating,end_plating)
@@ -29,24 +29,42 @@ INSERT INTO regroupments (family_id,name,start_plating,end_plating)
  ((SELECT id from families WHERE name LIKE 'Salades'),'Salade d''automne','2019-08-01','2019-10-15')
 ;
 
-INSERT INTO plants (group_id,name,src_img)
+INSERT INTO plants (group_id,name)
  VALUES
- ((SELECT id from regroupments WHERE name LIKE 'Choux d''automne'),'Chou Fleur',@choufleu),        --Choux automne
- ((SELECT id from regroupments WHERE name LIKE 'Choux d''automne'),'Chou Frisé',@choufri),
- ((SELECT id from regroupments WHERE name LIKE 'Choux d''hiver'),'Chou Fleur',@choufleu),        --Choux hiver
- ((SELECT id from regroupments WHERE name LIKE 'Choux d''hiver'),'Chou Frisé',@choufri),
- ((SELECT id from regroupments WHERE name LIKE 'Choux de printemps'),'Chou Fleur',@choufleu),        --Choux printemps
- ((SELECT id from regroupments WHERE name LIKE 'Choux de printemps'),'Chou Frisé',@choufri),
- ((SELECT id from regroupments WHERE name LIKE 'Salade d''hiver'),'Batavia Blonde',@batabl),      --Salade hiver
- ((SELECT id from regroupments WHERE name LIKE 'Salade d''hiver'),'Batavia Brune',@batabr),
- ((SELECT id from regroupments WHERE name LIKE 'Salade d''hiver'),'Mache',@mache),
- ((SELECT id from regroupments WHERE name LIKE 'Salade de printemps'),'Batavia Blonde',@batabl),      --Salade printemps
- ((SELECT id from regroupments WHERE name LIKE 'Salade de printemps'),'Batavia Brune',@batabr),
- ((SELECT id from regroupments WHERE name LIKE 'Salade d''été'),'Batavia Blonde',@batabl),      --Salade été
- ((SELECT id from regroupments WHERE name LIKE 'Salade d''été'),'Batavia Brune',@batabr),
- ((SELECT id from regroupments WHERE name LIKE 'Salade d''automne'),'Batavia Blonde',@batabl),      --Salade automne
- ((SELECT id from regroupments WHERE name LIKE 'Salade d''automne'),'Batavia Brune',@batabr)
+ (1,'Chou Fleur'),        --Choux automne
+ (1,'Chou Frisé'),
+ (2,'Chou Fleur'),        --Choux hiver
+ (2,'Chou Frisé'),
+ (3,'Chou Fleur'),        --Choux printemps
+ (3,'Chou Frisé'),
+ (4,'Batavia Blonde'),      --Salade hiver
+ (4,'Batavia Brune'),
+ (4,'Mache'),
+ (5,'Batavia Blonde'),      --Salade printemps
+ (5,'Batavia Brune'),
+ (6,'Batavia Blonde'),      --Salade été
+ (6,'Batavia Brune'),
+ (7,'Batavia Blonde'),      --Salade automne
+ (7,'Batavia Brune')
 ;
+
+INSERT INTO plants_images(plant_id,src_img)
+ VALUES
+ (1,@choufleu),        --Choux automne
+ (2,@choufri),
+ (3,@choufleu),        --Choux hiver
+ (4,@choufri),
+ (5,@choufleu),        --Choux printemps
+ (6,@choufri),
+ (7,@batabl),      --Salade hiver
+ (8,@batabr),
+ (9,@mache),
+ (10,@batabl),      --Salade printemps
+ (11,@batabr),
+ (12,@batabl),      --Salade été
+ (13,@batabr),
+ (14,@batabl),      --Salade automne
+ (15,@batabr)
 
 INSERT INTO generic_prices (family_id,price,quantity)
   VALUES

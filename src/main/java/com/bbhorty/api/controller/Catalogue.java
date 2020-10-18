@@ -1,11 +1,7 @@
 package com.bbhorty.api.controller;
 
-import com.bbhorty.api.entity.Categories;
-import com.bbhorty.api.entity.Families;
-import com.bbhorty.api.entity.Regroupments;
 import com.bbhorty.api.entity.dto.CategoriesDTO;
 import com.bbhorty.api.entity.dto.TreeDTO;
-import com.bbhorty.api.repository.CategoriesRepository;
 import com.bbhorty.api.repository.PlantsRepository;
 import com.bbhorty.api.services.CategoriesService;
 import com.bbhorty.api.services.FamiliesService;
@@ -13,13 +9,11 @@ import com.bbhorty.api.services.RegroupmentsService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Collection;
-import java.util.List;
 
 
 @RestController

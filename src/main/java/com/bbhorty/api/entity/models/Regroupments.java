@@ -1,4 +1,4 @@
-package com.bbhorty.api.entity;
+package com.bbhorty.api.entity.models;
 
 import lombok.Data;
 
@@ -20,9 +20,7 @@ public class Regroupments implements Serializable {
 
     private String name;
 
-    private Date start_plating;
-
-    private Date end_plating;
+    private String pathName;
 
 
 }

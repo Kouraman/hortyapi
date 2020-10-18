@@ -1,7 +1,5 @@
 package com.bbhorty.api.services;
 
-import com.bbhorty.api.entity.Categories;
-import com.bbhorty.api.entity.Regroupments;
 import com.bbhorty.api.entity.converter.CategoriesConverter;
 import com.bbhorty.api.entity.dto.CategoriesDTO;
 import com.bbhorty.api.repository.CategoriesRepository;

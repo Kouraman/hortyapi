@@ -12,24 +12,24 @@ INSERT INTO categories (name,src_img)
  ('fleurs',@choufri)
 ;
 
-INSERT INTO families (category_id,name,src_img)
+INSERT INTO families (category_id,name,src_img,path_name)
  VALUES
- ((SELECT id from categories WHERE name LIKE 'legumes'),'Choux',@choufri),
- ((SELECT id from categories WHERE name LIKE 'legumes'),'Salades',@batabl)
+ ((SELECT id from categories WHERE name LIKE 'legumes'),'Choux',@choufri,'choux'),
+ ((SELECT id from categories WHERE name LIKE 'legumes'),'Salades',@batabl,'salades')
 ;
 
-INSERT INTO regroupments (family_id,name,start_plating,end_plating)
+INSERT INTO regroupments (family_id,name,path_name)
  VALUES
- ((SELECT id from families WHERE name LIKE 'Choux'),'Choux d''automne','2019-07-01','2019-07-31'),
- ((SELECT id from families WHERE name LIKE 'Choux'),'Choux d''hiver','2019-07-21','2019-08-31'),
- ((SELECT id from families WHERE name LIKE 'Choux'),'Choux de printemps','2019-09-21','2019-10-21'),
- ((SELECT id from families WHERE name LIKE 'Salades'),'Salade d''hiver','2019-10-01','2019-01-31'),
- ((SELECT id from families WHERE name LIKE 'Salades'),'Salade de printemps','2019-02-01','2019-05-15'),
- ((SELECT id from families WHERE name LIKE 'Salades'),'Salade d''été','2019-05-15','2019-08-15'),
- ((SELECT id from families WHERE name LIKE 'Salades'),'Salade d''automne','2019-08-01','2019-10-15')
+ ((SELECT id from families WHERE name LIKE 'Choux'),'Choux d''automne','chou-automne'),
+ ((SELECT id from families WHERE name LIKE 'Choux'),'Choux d''hiver','chou-hiver'),
+ ((SELECT id from families WHERE name LIKE 'Choux'),'Choux de printemps','chou-printemps'),
+ ((SELECT id from families WHERE name LIKE 'Salades'),'Salade d''hiver','salade-hiver'),
+ ((SELECT id from families WHERE name LIKE 'Salades'),'Salade de printemps','salade-printemps'),
+ ((SELECT id from families WHERE name LIKE 'Salades'),'Salade d''été','salade-ete'),
+ ((SELECT id from families WHERE name LIKE 'Salades'),'Salade d''automne','salade-automne')
 ;
 
-INSERT INTO plants (group_id,name)
+INSERT INTO plants (group_id,name,path_name)
  VALUES
  (1,'Chou Fleur'),        --Choux automne
  (1,'Chou Frisé'),

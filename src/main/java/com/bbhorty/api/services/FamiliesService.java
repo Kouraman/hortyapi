@@ -1,6 +1,6 @@
 package com.bbhorty.api.services;
 
-import com.bbhorty.api.entity.Families;
+import com.bbhorty.api.entity.models.Families;
 import com.bbhorty.api.entity.converter.TreeDTOConverter;
 import com.bbhorty.api.entity.dto.TreeDTO;
 import com.bbhorty.api.exception.ResourceNotFoundException;
@@ -8,11 +8,8 @@ import com.bbhorty.api.repository.FamiliesRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import sun.reflect.generics.tree.Tree;
 
 import java.util.Collection;
-import java.util.List;
-import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor

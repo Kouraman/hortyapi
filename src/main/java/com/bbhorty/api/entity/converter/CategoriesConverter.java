@@ -1,9 +1,7 @@
 package com.bbhorty.api.entity.converter;
 
-import com.bbhorty.api.entity.Categories;
-import com.bbhorty.api.entity.Families;
+import com.bbhorty.api.entity.models.Categories;
 import com.bbhorty.api.entity.dto.CategoriesDTO;
-import com.bbhorty.api.entity.dto.FamiliesDTO;
 import org.springframework.stereotype.Component;
 import java.util.function.Function;
 

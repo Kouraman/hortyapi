@@ -1,6 +1,6 @@
 package com.bbhorty.api.repository;
 
-import com.bbhorty.api.entity.Regroupments;
+import com.bbhorty.api.entity.models.Regroupments;
 import org.springframework.data.repository.CrudRepository;
 
 import java.util.List;

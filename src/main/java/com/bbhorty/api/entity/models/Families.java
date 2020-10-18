@@ -1,4 +1,4 @@
-package com.bbhorty.api.entity;
+package com.bbhorty.api.entity.models;
 
 import lombok.Data;
 
@@ -18,6 +18,8 @@ public class Families implements Serializable {
     private Categories categories;
 
     private String name;
+
+    private String pathName;
 
     private String srcImg;
 

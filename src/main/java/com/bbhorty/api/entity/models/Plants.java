@@ -1,4 +1,4 @@
-package com.bbhorty.api.entity;
+package com.bbhorty.api.entity.models;
 
 import lombok.Data;
 
@@ -20,11 +20,9 @@ public class Plants implements Serializable {
 
     private String name;
 
-    private Date start_specific_plating;
+    private String pathName;
 
-    private Date end_specific_plating;
-
-    private String src_img;
+    private String srcImg;
 
 
 

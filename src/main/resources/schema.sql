@@ -1,10 +1,14 @@
-DROP TABLE IF EXISTS generic_prices;
-DROP TABLE IF EXISTS generic_advices;
-DROP TABLE IF EXISTS generic_treatments;
-DROP TABLE IF EXISTS specific_prices;
-DROP TABLE IF EXISTS specific_advices;
-DROP TABLE IF EXISTS specific_treatments;
+DROP TABLE IF EXISTS family_advices;
+DROP TABLE IF EXISTS regroupment_advices;
+DROP TABLE IF EXISTS plant_advices;
+DROP TABLE IF EXISTS family_treatments;
+DROP TABLE IF EXISTS regroupment_treatments;
+DROP TABLE IF EXISTS plant_treatments;
+DROP TABLE IF EXISTS plants_plating_dates;
+DROP TABLE IF EXISTS plants_prices;
 DROP TABLE IF EXISTS plants_images;
+DROP TABLE IF EXISTS plating_dates;
+DROP TABLE IF EXISTS prices;
 DROP TABLE IF EXISTS plants;
 DROP TABLE IF EXISTS regroupments;
 DROP TABLE IF EXISTS families;
@@ -31,18 +35,19 @@ CREATE TABLE regroupments (
   id                    INTEGER PRIMARY KEY AUTO_INCREMENT,
   family_id             INTEGER NOT NULL,
   name                  VARCHAR(64) UNIQUE NOT NULL,
+  path_name             VARCHAR(64) UNIQUE NOT NULL,
 
   FOREIGN KEY (family_id) REFERENCES families(id)
 );
 
 CREATE TABLE plants (
   id                            INTEGER PRIMARY KEY AUTO_INCREMENT,
-  group_id                      INTEGER NOT NULL,
+  regroupment_id                INTEGER NOT NULL,
   name                          VARCHAR(64) NOT NULL,
-  start_specific_plating        DATE,
-  end_specific_plating          DATE
+  description                   VARCHAR(255),
+  path_name                     VARCHAR(64) UNIQUE NOT NULL,
 
-  FOREIGN KEY (group_id) REFERENCES regroupments(id)
+  FOREIGN KEY (regroupment_id) REFERENCES regroupments(id)
 );
 
 CREATE TABLE plants_images (
@@ -53,58 +58,96 @@ CREATE TABLE plants_images (
   FOREIGN KEY (plant_id) REFERENCES plants(id)
 );
 
+CREATE TABLE planting_dates (
 
+  id	                INTEGER PRIMARY KEY AUTO_INCREMENT,
+  name	                VARCHAR(64) NOT NULL,
+  start_planting        DATE,
+  end_planting          DATE,
+  days_until_harvest    INTEGER
+);
 
--- Tables linked to families
+CREATE TABLE plants_plating_dates (
+  id                      INTEGER PRIMARY KEY AUTO_INCREMENT,
+  plant_id                INTEGER NOT NULL,
+  plating_dates_id        INTEGER NOT NULL,
 
-CREATE TABLE generic_prices (
+  FOREIGN KEY (plant_id) REFERENCES plants(id),
+  FOREIGN KEY (plating_dates_id) REFERENCES planting_dates(id)
+);
+
+CREATE TABLE prices (
   id                    INTEGER PRIMARY KEY AUTO_INCREMENT,
-  family_id             INTEGER NOT NULL,
+  name                  VARCHAR(64) NOT NULL,
   price                 DECIMAL(4, 2) NOT NULL,
   quantity              INTEGER NOT NULL,
 
   FOREIGN KEY (family_id) REFERENCES families(id)
 );
 
-CREATE TABLE generic_advices (
-  id                    INTEGER PRIMARY KEY AUTO_INCREMENT,
+CREATE TABLE plants_prices (
+
+  id	                INTEGER PRIMARY KEY AUTO_INCREMENT,
+  plant_id	            INTEGER NOT NULL,
+  price_id              INTEGER NOT NULL,
+
+  FOREIGN KEY (plant_id) REFERENCES plants(id),
+  FOREIGN KEY (price_id) REFERENCES prices(id)
+);
+
+CREATE TABLE family_advices(
+
+  id	                INTEGER PRIMARY KEY AUTO_INCREMENT,
   family_id             INTEGER NOT NULL,
   advice                VARCHAR(255) NOT NULL,
 
   FOREIGN KEY (family_id) REFERENCES families(id)
 );
 
-CREATE TABLE generic_treatments (
-  id                    INTEGER PRIMARY KEY AUTO_INCREMENT,
-  family_id             INTEGER NOT NULL,
-  treatment             VARCHAR(255) NOT NULL,
+CREATE TABLE regroupment_advices(
 
-  FOREIGN KEY (family_id) REFERENCES families(id)
+  id	                INTEGER PRIMARY KEY AUTO_INCREMENT,
+  regroupment_id        INTEGER NOT NULL,
+  advice                VARCHAR(255) NOT NULL,
+
+  FOREIGN KEY (regroupment_id) REFERENCES regroupments(id)
 );
 
--- Tables linked to Plants
+CREATE TABLE plant_advices(
 
-CREATE TABLE specific_prices (
-  id                    INTEGER PRIMARY KEY AUTO_INCREMENT,
-  plant_id              INTEGER NOT NULL,
-  price                 INTEGER NOT NULL,
-  quantity              INTEGER NOT NULL,
-
-  FOREIGN KEY (plant_id) REFERENCES plants(id)
-);
-
-CREATE TABLE specific_advices (
-  id                    INTEGER PRIMARY KEY AUTO_INCREMENT,
+  id	                INTEGER PRIMARY KEY AUTO_INCREMENT,
   plant_id              INTEGER NOT NULL,
   advice                VARCHAR(255) NOT NULL,
 
   FOREIGN KEY (plant_id) REFERENCES plants(id)
 );
 
-CREATE TABLE specific_treatments (
-  id                    INTEGER PRIMARY KEY AUTO_INCREMENT,
+CREATE TABLE family_treatments(
+
+  id	                INTEGER PRIMARY KEY AUTO_INCREMENT,
+  family_id             INTEGER NOT NULL,
+  treatment             VARCHAR(255) NOT NULL,
+
+  FOREIGN KEY (family_id) REFERENCES families(id)
+
+);
+
+CREATE TABLE regroupment_treatments(
+
+  id	                INTEGER PRIMARY KEY AUTO_INCREMENT,
+  regroupment_id        INTEGER NOT NULL,
+  treatment             VARCHAR(255) NOT NULL,
+
+  FOREIGN KEY (regroupment_id) REFERENCES regroupments(id)
+);
+
+CREATE TABLE plant_treatments(
+
+  id	                INTEGER PRIMARY KEY AUTO_INCREMENT,
   plant_id              INTEGER NOT NULL,
   treatment             VARCHAR(255) NOT NULL,
 
   FOREIGN KEY (plant_id) REFERENCES plants(id)
 );
+
+

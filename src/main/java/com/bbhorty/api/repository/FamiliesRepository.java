@@ -1,6 +1,6 @@
 package com.bbhorty.api.repository;
 
-import com.bbhorty.api.entity.Families;
+import com.bbhorty.api.entity.models.Families;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;

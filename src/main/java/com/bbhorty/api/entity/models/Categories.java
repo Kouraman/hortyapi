@@ -1,4 +1,4 @@
-package com.bbhorty.api.entity;
+package com.bbhorty.api.entity.models;
 
 import lombok.Data;
 

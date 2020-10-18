@@ -1,7 +1,6 @@
 package com.bbhorty.api.entity.converter;
 
-import com.bbhorty.api.entity.Families;
-import com.bbhorty.api.entity.dto.FamiliesDTO;
+import com.bbhorty.api.entity.models.Families;
 import com.bbhorty.api.entity.dto.TreeDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;

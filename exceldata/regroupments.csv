@@ -1,34 +1,34 @@
-1;1;Laitue ;legumes/salade/batavia_brune.png;laitue
-2;1;Chicorée;legumes/salade/scarole.jpg;chicoree
-3;8;Epinard;legumes/salade/epinard.jpg;epinard
-4;2;Choux traditionnels;legumes/chou/frise.jpg;traditionnel
-5;2;Choux atypiques;legumes/chou/kale.jpg;atypique
-6;3;Courgettes;legumes/curcubitace/courgette/long_vert.jpg;courgette
-7;3;Melons;legumes/curcubitace/melon/charentais.jpg;melon
-8;3;Pasteques;legumes/curcubitace/pasteque/melon_eau.jpg;pasteque
-9;3;Concombre;legumes/curcubitace/concombre/lisse.jpg;concombre
-10;3;Autres Curcurbitacés;legumes/curcubitace/autre/butternut.jpg;autre
-11;4;Tomates Précoce;legumes/tomate/tradi/moyenne.jpg;precoce
-12;4;Tomates Rondes;legumes/tomate/tradi/moyenne.jpg;ronde
-13;4;Tomates Tardives;legumes/tomate/tradi/grosse.jpg;tardive
-14;4;Tomates Cerise;legumes/tomate/collection/cerise_poire.jpg;cerise
-15;4;Tomates Collection;legumes/tomate/collection/andine.jpg;collection
-16;5;Aromatiques Annuels;legumes/aromatique/basilic_fin.jpg;annuel
-17;5;Aromatiques Vivaces;legumes/aromatique/thym.jpg;vivace
-18;8;Artichaud;legumes/divers/artichaud/petit_violet.jpg;artichaud
-19;7;Fraises remontantes;legumes/fraise/remontantes/agathe.jpg;remontante
-20;7;Fraises printanière;legumes/fraise/printeniere/gariguette.jpg;printaniere
-21;8;Patates;legumes/divers/patate/patate_douce.jpg;patate
-22;8;Asperges;legumes/divers/asperge/verte.jpg;asperge
-23;8;Blettes;legumes/divers/blette/blette.jpg;blette
-24;8;Betteraves;legumes/divers/betterave/betterave.jpg;betterave
-25;8;Céleri;legumes/divers/celeri/celeri_branche.jpg;celeri
-26;8;Fenouil;legumes/divers/fenouil/fenouil.jpg;fenouil
-27;9;Poivrons;legumes/poivron_piment/general.jpg;poivron
-28;9;Piments;legumes/poivron_piment/piment_rouge.jpg;piment
-29;10;Aubergines blanches;legumes/aubergine/blanche_long.jpg;blanc
-30;10;Aubergines violettes;legumes/aubergine/violet_long.jpg;violet
-31;11;Oignon Rouge;legumes/oignon_poireau/rond_rouge.jpg;oignon-rouge
-32;11;Oignon Jaune;legumes/oignon_poireau/rond_jaune.jpg;oignon-jaune
-33;11;Oignon Blanc;legumes/oignon_poireau/rond_blanc.jpg;oignon-blanc
-34;11;Poireau;legumes/oignon_poireau/poireau.jpg;poireau
+1;1;'Laitue ';'legumes/salade/batavia_brune.png';'laitue'
+2;1;'Chicorée';'legumes/salade/scarole.jpg';'chicoree'
+3;8;'Epinard';'legumes/salade/epinard.jpg';'epinard'
+4;2;'Choux traditionnels';'legumes/chou/frise.jpg';'traditionnel'
+5;2;'Choux atypiques';'legumes/chou/kale.jpg';'atypique'
+6;3;'Courgettes';'legumes/curcubitace/courgette/long_vert.jpg';'courgette'
+7;3;'Melons';'legumes/curcubitace/melon/charentais.jpg';'melon'
+8;3;'Pasteques';'legumes/curcubitace/pasteque/melon_eau.jpg';'pasteque'
+9;3;'Concombre';'legumes/curcubitace/concombre/lisse.jpg';'concombre'
+10;3;'Autres Curcurbitacés';'legumes/curcubitace/autre/butternut.jpg';'autre'
+11;4;'Tomates Précoce';'legumes/tomate/tradi/moyenne.jpg';'precoce'
+12;4;'Tomates Rondes';'legumes/tomate/tradi/moyenne.jpg';'ronde'
+13;4;'Tomates Tardives';'legumes/tomate/tradi/grosse.jpg';'tardive'
+14;4;'Tomates Cerise';'legumes/tomate/collection/cerise_poire.jpg';'cerise'
+15;4;'Tomates Collection';'legumes/tomate/collection/andine.jpg';'collection'
+16;5;'Aromatiques Annuels';'legumes/aromatique/basilic_fin.jpg';'annuel'
+17;5;'Aromatiques Vivaces';'legumes/aromatique/thym.jpg';'vivace'
+18;8;'Artichaud';'legumes/divers/artichaud/petit_violet.jpg';'artichaud'
+19;7;'Fraises remontantes';'legumes/fraise/remontantes/agathe.jpg';'remontante'
+20;7;'Fraises printanière';'legumes/fraise/printeniere/gariguette.jpg';'printaniere'
+21;8;'Patates';'legumes/divers/patate/patate_douce.jpg';'patate'
+22;8;'Asperges';'legumes/divers/asperge/verte.jpg';'asperge'
+23;8;'Blettes';'legumes/divers/blette/blette.jpg';'blette'
+24;8;'Betteraves';'legumes/divers/betterave/betterave.jpg';'betterave'
+25;8;'Céleri';'legumes/divers/celeri/celeri_branche.jpg';'celeri'
+26;8;'Fenouil';'legumes/divers/fenouil/fenouil.jpg';'fenouil'
+27;9;'Poivrons';'legumes/poivron_piment/general.jpg';'poivron'
+28;9;'Piments';'legumes/poivron_piment/piment_rouge.jpg';'piment'
+29;10;'Aubergines blanches';'legumes/aubergine/blanche_long.jpg';'blanc'
+30;10;'Aubergines violettes';'legumes/aubergine/violet_long.jpg';'violet'
+31;11;'Oignon Rouge';'legumes/oignon_poireau/rond_rouge.jpg';'oignon-rouge'
+32;11;'Oignon Jaune';'legumes/oignon_poireau/rond_jaune.jpg';'oignon-jaune'
+33;11;'Oignon Blanc';'legumes/oignon_poireau/rond_blanc.jpg';'oignon-blanc'
+34;11;'Poireau';'legumes/oignon_poireau/poireau.jpg';'poireau'

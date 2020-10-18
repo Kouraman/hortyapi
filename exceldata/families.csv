@@ -1,10 +1,10 @@
-1;1;Salade;salade;legumes/salade/batavia_blonde.jpg
-2;1;Choux;chou;legumes/chou/frise.jpg
-3;1;Curcurbitacé;curcurbitace;legumes/curcubitace/courgette/long_vert.jpg
-4;1;Tomates;tomat;legumes/tomate/tradi/moyenne.jpg
-5;1;Aromatique;aromat;legumes/aromatique/persil.jpg
-7;1;Fraises;fraise;legumes/fraise/remontantes/agathe.jpg
-8;1;Divers;diver;legumes/divers/artichaud/petit_violet.jpg
-9;1;Poivrons & Piments;poivron-piment;legumes/poivron_piment/rouge.jpg
-10;1;Aubergines;aubergine;legumes/aubergine/violet_long.jpg
-11;1;Oignons & Poireaux;oignon-poireau;legumes/oignon_poireau/rond_jaune.jpg
+1;1;'salade';'salade';'legumes/salade/batavia_blonde.jpg'
+2;1;'chou';'chou';'legumes/chou/frise.jpg'
+3;1;'curcurbitace';'curcurbitace';'legumes/curcubitace/courgette/long_vert.jpg'
+4;1;'tomat';'tomat';'legumes/tomate/tradi/moyenne.jpg'
+5;1;'aromat';'aromat';'legumes/aromatique/persil.jpg'
+7;1;'fraise';'fraise';'legumes/fraise/remontantes/agathe.jpg'
+8;1;'diver';'diver';'legumes/divers/artichaud/petit_violet.jpg'
+9;1;'poivron-piment';'poivron-piment';'legumes/poivron_piment/rouge.jpg'
+10;1;'aubergine';'aubergine';'legumes/aubergine/violet_long.jpg'
+11;1;'oignon-poireau';'oignon-poireau';'legumes/oignon_poireau/rond_jaune.jpg'

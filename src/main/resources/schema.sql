@@ -7,7 +7,7 @@ DROP TABLE IF EXISTS plant_treatments;
 DROP TABLE IF EXISTS plants_plating_dates;
 DROP TABLE IF EXISTS plants_prices;
 DROP TABLE IF EXISTS plants_images;
-DROP TABLE IF EXISTS plating_dates;
+DROP TABLE IF EXISTS planting_dates;
 DROP TABLE IF EXISTS prices;
 DROP TABLE IF EXISTS plants;
 DROP TABLE IF EXISTS regroupments;
@@ -26,7 +26,7 @@ CREATE TABLE families (
   category_id           INTEGER NOT NULL,
   name                  VARCHAR(64) UNIQUE NOT NULL,
   path_name             VARCHAR(64) UNIQUE NOT NULL,
-  src_img               VARCHAR(255),
+  src_img               VARCHAR(64) NOT NULL,
 
   FOREIGN KEY (category_id) REFERENCES categories(id)
 );
@@ -35,6 +35,7 @@ CREATE TABLE regroupments (
   id                    INTEGER PRIMARY KEY AUTO_INCREMENT,
   family_id             INTEGER NOT NULL,
   name                  VARCHAR(64) UNIQUE NOT NULL,
+  src_img               VARCHAR(64) NOT NULL,
   path_name             VARCHAR(64) UNIQUE NOT NULL,
 
   FOREIGN KEY (family_id) REFERENCES families(id)
@@ -65,6 +66,7 @@ CREATE TABLE planting_dates (
   start_planting        DATE,
   end_planting          DATE,
   days_until_harvest    INTEGER
+
 );
 
 CREATE TABLE plants_plating_dates (
@@ -80,9 +82,7 @@ CREATE TABLE prices (
   id                    INTEGER PRIMARY KEY AUTO_INCREMENT,
   name                  VARCHAR(64) NOT NULL,
   price                 DECIMAL(4, 2) NOT NULL,
-  quantity              INTEGER NOT NULL,
-
-  FOREIGN KEY (family_id) REFERENCES families(id)
+  quantity              INTEGER NOT NULL
 );
 
 CREATE TABLE plants_prices (

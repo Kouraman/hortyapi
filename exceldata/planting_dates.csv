@@ -1,38 +1,38 @@
-1;salade-hiver;44089;44105;56
-2;salade-printemps;43862;43966;35
-3;salade-été;43966;44058;21
-4;salade-automne;44058;44089;42
-5;choux-hiver;44044;44075;1
-6;choux-printemps;44058;44089;1
-7;choux-autmones;44013;44044;1
-8;courgettes;43936;43997;1
-9;melons;43952;43983;1
-10;melons tardif;43966;43983;1
-11;pasteques;43952;43983;1
-12;conconmbre;43966;43997;1
-13;autre curcurbitace;43952;43983;1
-14;tomate precoce;43905;43936;1
-15;tomate precoce gros pot;43936;43966;1
-16;tomate classique;43936;43983;1
-17;tomate tardives;43936;43983;1
-18;tomates cerises;43936;43983;1
-19;tomates collection;43936;43983;1
-20;aromate printemps;43936;43997;1
-21;aromate été;43997;44058;1
-22;artichaud;43922;44105;1
-23;fraise printemps;43905;43936;1
-24;fraise automne;44075;44105;1
-25;patate douce;43936;43966;1
-26;asperge;43862;43891;1
-27;blette;43922;44075;1
-28;betteraves;43922;44075;1
-29;celeri;43922;44075;1
-30;fenouil;43922;44075;1
-31;oignon printemp precoce;43905;43936;1
-32;oignon printemp tardif;43936;43966;1
-33;oignon automne;44105;44119;1
-34;poireau été;44027;44058;1
-35;poireau hiver;44058;44089;1
-36;piments;43952;43983;1
-37;poivrons;43936;43983;1
-38;aubergines;43936;43983;1
+1;'salade-hiver';'2020-09-15';'2020-10-01';56
+2;'salade-printemps';'2020-02-01';'2020-05-15';35
+3;'salade-été';'2020-05-15';'2020-08-15';21
+4;'salade-automne';'2020-08-15';'2020-09-15';42
+5;'choux-hiver';'2020-08-01';'2020-09-01';1
+6;'choux-printemps';'2020-08-15';'2020-09-15';1
+7;'choux-autmones';'2020-07-01';'2020-08-01';1
+8;'courgettes';'2020-04-15';'2020-06-15';1
+9;'melons';'2020-05-01';'2020-06-01';1
+10;'melons tardif';'2020-05-15';'2020-06-01';1
+11;'pasteques';'2020-05-01';'2020-06-01';1
+12;'conconmbre';'2020-05-15';'2020-06-15';1
+13;'autre curcurbitace';'2020-05-01';'2020-06-01';1
+14;'tomate precoce';'2020-03-15';'2020-04-15';1
+15;'tomate precoce gros pot';'2020-04-15';'2020-05-15';1
+16;'tomate classique';'2020-04-15';'2020-06-01';1
+17;'tomate tardives';'2020-04-15';'2020-06-01';1
+18;'tomates cerises';'2020-04-15';'2020-06-01';1
+19;'tomates collection';'2020-04-15';'2020-06-01';1
+20;'aromate printemps';'2020-04-15';'2020-06-15';1
+21;'aromate été';'2020-06-15';'2020-08-15';1
+22;'artichaud';'2020-04-01';'2020-10-01';1
+23;'fraise printemps';'2020-09-15';'2020-04-15';1
+24;'fraise automne';'2020-09-01';'2020-10-01';1
+25;'patate douce';'2020-04-15';'2020-05-15';1
+26;'asperge';'2020-02-01';'2020-03-01';1
+27;'blette';'2020-04-01';'2020-09-01';1
+28;'betteraves';'2020-04-01';'2020-09-01';1
+29;'celeri';'2020-04-01';'2020-09-01';1
+30;'fenouil';'2020-04-01';'2020-09-01';1
+31;'oignon printemp precoce';'2020-03-15';'2020-04-15';1
+32;'oignon printemp tardif';'2020-04-15';'2020-05-15';1
+33;'oignon automne';'2020-10-01';'2020-10-15';1
+34;'poireau été';'2020-07-15';'2020-08-15';1
+35;'poireau hiver';'2020-08-15';'2020-09-15';1
+36;'piments';'2020-05-01';'2020-06-01';1
+37;'poivrons';'2020-04-15';'2020-06-01';1
+38;'aubergines';'2020-04-15';'2020-06-01';1

@@ -27,9 +27,8 @@ def editCSVFile(fileName):
             else:
                 lines[index] = lines[index] + ')'
 
-
-        lines[index]=lines[index].replace(';',',')
-        lines[index]=lines[index]+"\n"              #read the line return at each line
+        lines[index]=lines[index].replace(';',',')          #Transforme semi_comma to comma
+        lines[index]=lines[index]+"\n"                      #read the line return at each line
 
     file = open("csv_edited_"+fileName, "w+")
     file.write("".join(lines))
@@ -46,6 +45,8 @@ def main():
 
     for fileName in csvFileNames:
         editCSVFile(fileName)
+
+    print("Be carefull : Mysql need to escape \"'\" by \"''\" char, you need to do it manually")
 
 
 if (__name__ == "__main__"):

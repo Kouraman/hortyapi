@@ -16,14 +16,19 @@ def editCSVFile(fileName):
 
     for index in range(0, len(lines)):
         lines[index]=lines[index].strip('\n')
-        lines[index]=lines[index].replace(';',',')
+
         if (lines[index][0]!='('):                  #Add '(' to the beginning of each line
             lines[index] = "(" + lines[index]
-        if (lines[index][-1]==','):                 #Remove the comma at the end of each line if needed
+        if (lines[index][-1]==';'):                 #Remove the dot-comma at the end of each line if needed
             lines[index] = lines[index][:-1]
-        if (lines[index][-1]!=')'):                 #Add ')' to the end of each line
-            lines[index] =  lines[index]+')'
+        if (lines[index][-1]!=',' and lines[index][-2]!=')'):  #Add '),' to the end of each line, except for the last where only ')' is needed
+            if(index!=len(lines)-1):
+                lines[index] = lines[index] + '),'
+            else:
+                lines[index] = lines[index] + ')'
 
+
+        lines[index]=lines[index].replace(';',',')
         lines[index]=lines[index]+"\n"              #read the line return at each line
 
     file = open("csv_edited_"+fileName, "w+")

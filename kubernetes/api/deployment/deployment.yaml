@@ -55,6 +55,10 @@ spec:
                 secretKeyRef:
                   name: mysql-db
                   key: password
+            - name: API_URL
+              value: "http://api/bbhorty.tk"
+            - name: CDN_URL
+                value: "https://cdn.bbhorty.tk"
           resources: {}
           terminationMessagePath: /dev/termination-log
           terminationMessagePolicy: File

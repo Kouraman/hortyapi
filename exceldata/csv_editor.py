@@ -1,6 +1,5 @@
 #!/usr/bin/python
 
-import sys
 import os
 
 #   run with :: python csv_editor.py data.csv

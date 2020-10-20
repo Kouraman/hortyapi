@@ -1,17 +1,18 @@
 package com.bbhorty.api.entity.models;
 
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
-import java.util.Set;
 
+@EqualsAndHashCode(callSuper = true)
 @Entity
 @Table(name = "categories")
 @Data
-public class Categories {
+public class Category extends Catalogue {
+
     @Id
     private Long id;
 
@@ -19,6 +20,4 @@ public class Categories {
 
     private String srcImg;
 
-//    @OneToMany(mappedBy="families")
-//    private Set<Families> families;
 }

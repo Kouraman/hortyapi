@@ -1,15 +1,14 @@
 package com.bbhorty.api.repository;
 
-import com.bbhorty.api.entity.models.Regroupments;
-import org.springframework.data.repository.CrudRepository;
+import com.bbhorty.api.entity.models.Regroupment;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 
-import java.util.List;
+import java.util.Collection;
+import java.util.Optional;
 
-public interface RegroupmentsRepository extends CrudRepository<Regroupments, Long> {
+public interface RegroupmentsRepository extends CatalogueRepository<Regroupment> {
 
-    List<Regroupments> findAll();
-
-    Regroupments findById(long id);
-
-    Regroupments findByName(String name);
+    @Query(value = "SELECT grp FROM Regroupment grp WHERE grp.family.id = :familyId")
+    Optional<Collection<Regroupment>> findAllByFamilyId(@Param("familyId") long familyId);
 }

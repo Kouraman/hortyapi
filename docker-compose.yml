@@ -10,6 +10,7 @@ services:
       - MYSQL_PORT=${MYSQL_PORT}
       - MYSQL_USER=${MYSQL_USER}
       - MYSQL_PWD=${MYSQL_PWD}
+      - API_URL="localhost:8080"
     ports:
       - 3306:3306
       - 8080:8080

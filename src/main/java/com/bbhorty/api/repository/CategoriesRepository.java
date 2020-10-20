@@ -1,15 +1,10 @@
 package com.bbhorty.api.repository;
 
-import com.bbhorty.api.entity.models.Categories;
-import org.springframework.data.repository.CrudRepository;
+import com.bbhorty.api.entity.models.Category;
 
 import java.util.Collection;
 
-public interface CategoriesRepository extends CrudRepository<Categories, Long> {
+public interface CategoriesRepository extends CatalogueRepository<Category>{
 
-    Collection<Categories> findAll();
-
-    Categories findById(long id);
-
-    Categories findByName(String name);
+    Collection<Category> findAll();
 }

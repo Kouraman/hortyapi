@@ -1,23 +1,17 @@
 package com.bbhorty.api.repository;
 
-import com.bbhorty.api.entity.models.Families;
-import com.bbhorty.api.entity.models.Plants;
+import com.bbhorty.api.entity.models.Plant;
 import org.springframework.data.jpa.repository.Query;
-import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
 
 import java.util.Collection;
-import java.util.List;
 import java.util.Optional;
 
-public interface PlantsRepository extends CrudRepository<Plants, Long> {
+public interface PlantsRepository extends CatalogueRepository<Plant> {
 
-    List<Plants> findAll();
+    @Query(value = "SELECT pla FROM Plant pla WHERE pla.regroupments.id = :regroupmentId")
+    Optional<Collection<Plant>> findAllByRegroupmentsId(@Param("regroupmentId") long regroupmentId);
 
-    Plants findById(long id);
-
-    Plants findByName(String name);
-
-    @Query(value = "SELECT pla FROM Plants pla WHERE pla.regroupments.name LIKE :categoryName")
-    Optional<Collection<Families>> findAllByCategoriesName(@Param("categoryName") String categoryName);
+    @Query(value = "SELECT pla FROM Plant pla WHERE pla.id = :plantId")
+    Optional<Plant> findByPlantId(@Param("plantId") long plantId);
 }

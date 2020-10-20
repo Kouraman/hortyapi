@@ -4,6 +4,8 @@ DROP TABLE IF EXISTS plant_advices;
 DROP TABLE IF EXISTS family_treatments;
 DROP TABLE IF EXISTS regroupment_treatments;
 DROP TABLE IF EXISTS plant_treatments;
+DROP TABLE IF EXISTS treatments;
+DROP TABLE IF EXISTS advices;
 DROP TABLE IF EXISTS plants_plating_dates;
 DROP TABLE IF EXISTS plants_prices;
 DROP TABLE IF EXISTS plants_images;
@@ -46,6 +48,7 @@ CREATE TABLE plants (
   regroupment_id                INTEGER NOT NULL,
   name                          VARCHAR(64) NOT NULL,
   description                   VARCHAR(255),
+  src_img                       VARCHAR(64) NOT NULL,
   path_name                     VARCHAR(64) UNIQUE NOT NULL,
 
   FOREIGN KEY (regroupment_id) REFERENCES regroupments(id)
@@ -95,59 +98,69 @@ CREATE TABLE plants_prices (
   FOREIGN KEY (price_id) REFERENCES prices(id)
 );
 
-CREATE TABLE family_advices(
-
-  id	                INTEGER PRIMARY KEY AUTO_INCREMENT,
-  family_id             INTEGER NOT NULL,
-  advice                VARCHAR(255) NOT NULL,
-
-  FOREIGN KEY (family_id) REFERENCES families(id)
+CREATE TABLE advices(
+    id                  INTEGER PRIMARY KEY AUTO_INCREMENT,
+    name                VARCHAR(64) NOT NULL,
+    advice              VARCHAR(255) NOT NULL
 );
 
-CREATE TABLE regroupment_advices(
-
-  id	                INTEGER PRIMARY KEY AUTO_INCREMENT,
-  regroupment_id        INTEGER NOT NULL,
-  advice                VARCHAR(255) NOT NULL,
-
-  FOREIGN KEY (regroupment_id) REFERENCES regroupments(id)
-);
-
-CREATE TABLE plant_advices(
-
-  id	                INTEGER PRIMARY KEY AUTO_INCREMENT,
-  plant_id              INTEGER NOT NULL,
-  advice                VARCHAR(255) NOT NULL,
-
-  FOREIGN KEY (plant_id) REFERENCES plants(id)
+CREATE TABLE treatments(
+    id                  INTEGER PRIMARY KEY AUTO_INCREMENT,
+    name                VARCHAR(64) NOT NULL,
+    treatment           VARCHAR(255) NOT NULL
 );
 
 CREATE TABLE family_treatments(
+    id                  INTEGER PRIMARY KEY AUTO_INCREMENT,
+    family_id	        INTEGER NOT NULL,
+    treatment_id        INTEGER NOT NULL,
 
-  id	                INTEGER PRIMARY KEY AUTO_INCREMENT,
-  family_id             INTEGER NOT NULL,
-  treatment             VARCHAR(255) NOT NULL,
+    FOREIGN KEY (family_id) REFERENCES families(id),
+    FOREIGN KEY (treatment_id) REFERENCES treatments(id)
+);
 
-  FOREIGN KEY (family_id) REFERENCES families(id)
+CREATE TABLE family_advices(
+    id                  INTEGER PRIMARY KEY AUTO_INCREMENT,
+    family_id	        INTEGER NOT NULL,
+    advice_id           INTEGER NOT NULL,
+
+    FOREIGN KEY (family_id) REFERENCES families(id),
+    FOREIGN KEY (advice_id) REFERENCES advices(id)
 
 );
 
 CREATE TABLE regroupment_treatments(
+    id                  INTEGER PRIMARY KEY AUTO_INCREMENT,
+    regroupment_id	    INTEGER NOT NULL,
+    treatment_id        INTEGER NOT NULL,
 
-  id	                INTEGER PRIMARY KEY AUTO_INCREMENT,
-  regroupment_id        INTEGER NOT NULL,
-  treatment             VARCHAR(255) NOT NULL,
+    FOREIGN KEY (regroupment_id) REFERENCES regroupments(id),
+    FOREIGN KEY (treatment_id) REFERENCES treatments(id)
+);
 
-  FOREIGN KEY (regroupment_id) REFERENCES regroupments(id)
+CREATE TABLE regroupment_advices(
+    id                  INTEGER PRIMARY KEY AUTO_INCREMENT,
+    regroupment_id	    INTEGER NOT NULL,
+    advice_id           INTEGER NOT NULL,
+
+    FOREIGN KEY (regroupment_id) REFERENCES regroupments(id),
+    FOREIGN KEY (advice_id) REFERENCES advices(id)
+);
+
+CREATE TABLE plant_advices(
+    id                  INTEGER PRIMARY KEY AUTO_INCREMENT,
+    plant_id	        INTEGER NOT NULL,
+    advice_id           INTEGER NOT NULL,
+
+    FOREIGN KEY (plant_id) REFERENCES plants(id),
+    FOREIGN KEY (advice_id) REFERENCES advices(id)
 );
 
 CREATE TABLE plant_treatments(
+    id                  INTEGER PRIMARY KEY AUTO_INCREMENT,
+    plant_id	        INTEGER NOT NULL,
+    treatment_id        INTEGER NOT NULL,
 
-  id	                INTEGER PRIMARY KEY AUTO_INCREMENT,
-  plant_id              INTEGER NOT NULL,
-  treatment             VARCHAR(255) NOT NULL,
-
-  FOREIGN KEY (plant_id) REFERENCES plants(id)
+    FOREIGN KEY (plant_id) REFERENCES plants(id),
+    FOREIGN KEY (treatment_id) REFERENCES treatments(id)
 );
-
-

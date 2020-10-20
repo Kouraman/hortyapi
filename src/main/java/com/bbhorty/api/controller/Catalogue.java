@@ -1,11 +1,9 @@
 package com.bbhorty.api.controller;
 
-import com.bbhorty.api.entity.dto.CategoriesDTO;
-import com.bbhorty.api.entity.dto.TreeDTO;
-import com.bbhorty.api.repository.PlantsRepository;
-import com.bbhorty.api.services.CategoriesService;
-import com.bbhorty.api.services.FamiliesService;
-import com.bbhorty.api.services.RegroupmentsService;
+import com.bbhorty.api.entity.dto.CatalogueDTO;
+import com.bbhorty.api.entity.dto.PlantDTO;
+import com.bbhorty.api.services.CatalogueService;
+import com.bbhorty.api.utils.EnvironmentVariable;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,48 +15,49 @@ import java.util.Collection;
 
 
 @RestController
-@RequestMapping("/catalogue")
+@RequestMapping("/"+EnvironmentVariable.CATALOGUE_URI)
 @RequiredArgsConstructor
 @Slf4j
 class Catalogue {
 
     @Autowired
-    private CategoriesService categoriesService;
-
-    @Autowired
-    private FamiliesService familiesService;
-
-    @Autowired
-    private RegroupmentsService regroupmentsService;
-
-    @Autowired
-    private PlantsRepository plantsRepository;
+    private CatalogueService catalogueService;
 
     @RequestMapping(path="")
-    public Collection<CategoriesDTO> getCategories(){
-        return categoriesService.getCategories();
+    public Collection<CatalogueDTO> getCategoriesCatalogue(){
+        return catalogueService.getCategories();
+
     }
 
-    @RequestMapping(path="/{category}")
-    public TreeDTO getFamiliesCatalogue( @PathVariable String category){
-        return familiesService.getTree(category);
-    }
-
-    @RequestMapping(path="/{category}/{family}")
-    public TreeDTO getPlantCatalogue(@PathVariable String category,
-                                     @PathVariable String family)
+    @RequestMapping(path="/"+ EnvironmentVariable.CATEGORY_URI +"/{categoryId}")
+    public Collection<CatalogueDTO> getCategory (
+            @PathVariable int categoryId
+    )
     {
-        return null;
+        return catalogueService.getFamilies(categoryId);
     }
 
-    @RequestMapping(path="/{category}/{family}/{plantId}")
-    public TreeDTO getPlant(@PathVariable String category,
-                            @PathVariable String family,
-                            @PathVariable String plantId)
+    @RequestMapping(path="/"+EnvironmentVariable.FAMILY_URI+"/{familyId}")
+    public Collection<CatalogueDTO> getFamily (
+            @PathVariable int familyId
+    )
     {
-        return null;
+        return catalogueService.getRegroupments(familyId);
     }
 
-    // Example endpoint : {category}/{family}/{plantId}
+    @RequestMapping(path="/"+EnvironmentVariable.REGROUPMENT_URI+"/{regroupmentId}")
+    public Collection<CatalogueDTO> getRegroupment (
+            @PathVariable int regroupmentId
+    )
+    {
+        return catalogueService.getPlants(regroupmentId);
+    }
 
+    @RequestMapping(path="/"+EnvironmentVariable.PLANT_URI+"/{plantId}")
+    public PlantDTO getProduct (
+            @PathVariable int plantId
+    )
+    {
+        return catalogueService.getPlant(plantId);
+    }
 }

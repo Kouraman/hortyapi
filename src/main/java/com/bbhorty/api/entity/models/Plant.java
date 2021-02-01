@@ -1,12 +1,14 @@
 package com.bbhorty.api.entity.models;
 
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Collection;
 import java.util.Set;
 
+@EqualsAndHashCode(callSuper = true)
 @Entity
 @Table(name = "plants")
 @Data

@@ -10,7 +10,8 @@ spec:
   selector:
     app: horty-api
   ports:
-    - port: 8080
+    - nodePort: 30876
+      port: 8080
       protocol: TCP
       targetPort: 8080
 

@@ -46,7 +46,7 @@ public class CatalogueService {
     public Collection<CatalogueDTO> getFamilies(int categoryId){
 
         return familiesRepository.findAllByFamilyId((long) categoryId)
-                .orElseThrow(() -> new ResourceNotFoundException("Not families found with category id  : "+categoryId))
+                .orElseThrow(() -> new ResourceNotFoundException("Not found families for the id  : "+categoryId))
                 .stream()
                 .map(family -> catalogueConverter.apply(family))
                 .collect(Collectors.toList());
@@ -55,7 +55,7 @@ public class CatalogueService {
     public Collection<CatalogueDTO> getRegroupments(int familyId){
 
         return regroupmentsRepository.findAllByFamilyId((long) familyId)
-                .orElseThrow(() -> new ResourceNotFoundException("Not regroupments found with family id  : "+familyId))
+                .orElseThrow(() -> new ResourceNotFoundException("Not found regroupments for the id  : "+familyId))
                 .stream()
                 .map(grp -> catalogueConverter.apply(grp))
                 .collect(Collectors.toList());
@@ -64,18 +64,9 @@ public class CatalogueService {
     public Collection<CatalogueDTO> getPlants(int regroupmentId){
 
         return plantsRepository.findAllByRegroupmentsId(regroupmentId)
-                .orElseThrow(() -> new ResourceNotFoundException("Not plants found with regroupment id  : "+regroupmentId))
+                .orElseThrow(() -> new ResourceNotFoundException("Not found plants for the id  : "+regroupmentId))
                 .stream()
                 .map(grp -> catalogueConverter.apply(grp))
                 .collect(Collectors.toList());
-    }
-
-    public PlantDTO getPlant(int plantId){
-
-        Plant plant = plantsRepository.findByPlantId(plantId)
-                .orElseThrow(() -> new ResourceNotFoundException("Not plant found with plant id  : "+plantId));
-
-        return plantConverter.apply(plant);
-
     }
 }

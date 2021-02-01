@@ -1,4 +1,4 @@
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   annotations:
@@ -27,7 +27,7 @@ spec:
         app: horty-api
     spec:
       containers:
-        - image: gcr.io/bb-horty-dev/api:latest
+        - image: gcr.io/bb-horty-dev-302215/api:latest
           imagePullPolicy: Always
           name: api
           #Add Expose Port
@@ -56,9 +56,9 @@ spec:
                   name: mysql-db
                   key: password
             - name: API_URL
-              value: "http://api/bbhorty.tk"
+              value: "http://api.bbhorty.ml"
             - name: CDN_URL
-                value: "https://cdn.bbhorty.tk"
+              value: "https://cdn.bbhorty.ml"
           resources: {}
           terminationMessagePath: /dev/termination-log
           terminationMessagePolicy: File

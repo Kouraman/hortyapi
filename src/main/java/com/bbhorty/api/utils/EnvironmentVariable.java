@@ -24,4 +24,6 @@ public class EnvironmentVariable {
 
     public final static String PLANT_URI = "plant";
 
+    public final static String PRICE_URI = "price";
+
 }

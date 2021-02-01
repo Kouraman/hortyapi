@@ -26,6 +26,7 @@ public class PlantConverter implements Function<Plant, PlantDTO> {
     @Override
     public PlantDTO apply(Plant plant) {
         PlantDTO dto = new PlantDTO();
+        dto.setId(plant.getId());
         dto.setName(StringUtils.capitalize(plant.getName()));
         dto.setPathName(apiUrlMaker.getPath(plant));
         dto.setImg(cdnUrlMaker.setImgPath(plant));

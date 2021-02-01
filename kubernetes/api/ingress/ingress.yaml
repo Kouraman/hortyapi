@@ -3,12 +3,13 @@ kind: Ingress
 metadata:
   name: bbhorty-ingress
   annotations:
-    kubernetes.io/ingress.global-static-ip-name: "bbhorty-ip-adress"
+    kubernetes.io/ingress.global-static-ip-name: "back-ip-adress"
 spec:
   rules:
-    - host: api.bbhorty.tk
+    - host: api.bbhorty.ml
       http:
         paths:
-          - backend:
+          - path: /*
+            backend:
               serviceName: api-service
               servicePort: 8080

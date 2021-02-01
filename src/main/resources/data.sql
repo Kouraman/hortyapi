@@ -7,16 +7,16 @@ INSERT INTO categories (id,name,src_img)
 
 INSERT INTO families (id,category_id,name,path_name,src_img)
  VALUES
-(1,1,'salade','salade','legumes/salade/batavia_blonde.jpg'),
-(2,1,'chou','chou','legumes/chou/frise.jpg'),
-(3,1,'curcurbitace','curcurbitace','legumes/curcubitace/courgette/long_vert.jpg'),
-(4,1,'tomat','tomat','legumes/tomate/tradi/moyenne.jpg'),
-(5,1,'aromat','aromat','legumes/aromatique/persil.jpg'),
-(7,1,'fraise','fraise','legumes/fraise/remontantes/agathe.jpg'),
-(8,1,'diver','diver','legumes/divers/artichaud/petit_violet.jpg'),
-(9,1,'poivron-piment','poivron-piment','legumes/poivron_piment/rouge.jpg'),
-(10,1,'aubergine','aubergine','legumes/aubergine/violet_long.jpg'),
-(11,1,'oignon-poireau','oignon-poireau','legumes/oignon_poireau/rond_jaune.jpg')
+(1,1,'Salades','salade','legumes/salade/batavia_blonde.jpg'),
+(2,1,'Choux','chou','legumes/chou/frise.jpg'),
+(3,1,'Curcurbitacés','curcurbitace','legumes/curcubitace/courgette/long_vert.jpg'),
+(4,1,'Tomates','tomate','legumes/tomate/tradi/moyenne.jpg'),
+(5,1,'Aromatiques','aromatique','legumes/aromatique/persil.jpg'),
+(7,1,'Fraises','fraise','legumes/fraise/remontantes/agathe.jpg'),
+(8,1,'Divers','divers','legumes/divers/artichaud/petit_violet.jpg'),
+(9,1,'Poivrons & Piments','poivron-piment','legumes/poivron_piment/rouge.jpg'),
+(10,1,'Aubergines','aubergine','legumes/aubergine/violet_long.jpg'),
+(11,1,'Oignons & Poireaux','oignon/poireau','legumes/oignon_poireau/rond_jaune.jpg')
 
 ;
 
@@ -30,7 +30,7 @@ INSERT INTO regroupments (id,family_id,name,src_img,path_name)
 (6,3,'Courgettes','legumes/curcubitace/courgette/long_vert.jpg','courgette'),
 (7,3,'Melons','legumes/curcubitace/melon/charentais.jpg','melon'),
 (8,3,'Pasteques','legumes/curcubitace/pasteque/melon_eau.jpg','pasteque'),
-(9,3,'Concombre','legumes/curcubitace/concombre/lisse.jpg','concombre'),
+(9,3,'Concombres','legumes/curcubitace/concombre/lisse.jpg','concombre'),
 (10,3,'Autres Curcurbitacés','legumes/curcubitace/autre/butternut.jpg','autre'),
 (11,4,'Tomates Précoce','legumes/tomate/tradi/moyenne.jpg','precoce'),
 (12,4,'Tomates Rondes','legumes/tomate/tradi/moyenne.jpg','ronde'),
@@ -52,9 +52,9 @@ INSERT INTO regroupments (id,family_id,name,src_img,path_name)
 (28,9,'Piments','legumes/poivron_piment/piment_rouge.jpg','piment'),
 (29,10,'Aubergines blanches','legumes/aubergine/blanche_long.jpg','blanc'),
 (30,10,'Aubergines violettes','legumes/aubergine/violet_long.jpg','violet'),
-(31,11,'Oignon Rouge','legumes/oignon_poireau/rond_rouge.jpg','oignon-rouge'),
-(32,11,'Oignon Jaune','legumes/oignon_poireau/rond_jaune.jpg','oignon-jaune'),
-(33,11,'Oignon Blanc','legumes/oignon_poireau/rond_blanc.jpg','oignon-blanc'),
+(31,11,'Oignons Rouge','legumes/oignon_poireau/rond_rouge.jpg','oignon-rouge'),
+(32,11,'Oignons Jaune','legumes/oignon_poireau/rond_jaune.jpg','oignon-jaune'),
+(33,11,'Oignons Blanc','legumes/oignon_poireau/rond_blanc.jpg','oignon-blanc'),
 (34,11,'Poireau','legumes/oignon_poireau/poireau.jpg','poireau')
 
 

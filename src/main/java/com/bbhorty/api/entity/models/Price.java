@@ -16,7 +16,7 @@ public class Price {
 
     private String name;
 
-    private Long price;
+    private Float price;
 
     private Long quantity;
 

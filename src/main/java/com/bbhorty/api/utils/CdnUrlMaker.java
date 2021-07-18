@@ -19,7 +19,7 @@ public class CdnUrlMaker {
     }
 
     public String getImgPath(Catalogue catalogue){
-        return getCdnUrl()+"/"+catalogue.getSrcImg();
+        return "/"+catalogue.getSrcImg();
     }
 
 

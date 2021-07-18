@@ -31,7 +31,7 @@ public class ApiUrlMaker {
     }
 
     private String getCatalogue(){
-        return env.getApiBaseUrl()+"/"+EnvironmentVariable.CATALOGUE_URI;
+        return "/"+EnvironmentVariable.CATALOGUE_URI;
     }
 
     private String getCategory(Category category){
